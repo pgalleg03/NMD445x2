@@ -1,0 +1,23 @@
+[
+   {
+        "username": "paula.gallego",
+        "password": "12345",
+        "name": "Paula",
+        "last_name": "Gallego",
+        "sport" : "Basketball"
+    },
+    {
+        "username": "avani.gil",
+        "password": "12345",
+        "name": "Avani",
+        "last_name": "Gil",
+        "sport" : "Field Hockey"
+    },
+    {
+        "username": "jeremiah.jenkins",
+        "password": "12345",
+        "name": "Jeremiah",
+        "last_name": "Jenkins",
+        "sport" : "Baseball"
+    } 
+]
