@@ -1,121 +1,58 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <style id="local-style">
-      /* Based on outline-styles-v1.6.*/
-      body {
-        font-family: verdana;
-        margin: 3em 3em;
-        color: dimgray;
-      }
-      a {
-        color: tomato;
-      }
-      h1 {
-        font-variant: small-caps;
-        font-size: 1.5em;
-        color: rgb(100%, 75%, 25%);
-      }
-      #device {
-        width: 414px;
-        height: 896px;
-        border: peru solid 2px;
-        border-radius: 10px;
-        padding: 20px;
-        background-color: palegoldenrod;
-      }
-      .card {
-        background-color: lightyellow;
-        border-radius: 10px;
-        padding: 1em;
-        margin-bottom: 20px;
-      }
-      img {
-        width: 100px;
-        float: left;
-        margin: 0 1em 0.5em 0;
-      }
-    </style>
-    <script id="local-json">
-      // To embed JSON in an HTML file like this requires that you set it equal to a variable.
-      cardsJSON = [
-        // 1. Paste your sample JSON objects, i.e. what's inside the [] brackets, below.
-        {
-          username: "paula.gallego",
-          password: "12345",
-          name: "Paula",
-          last_name: "Gallego",
-          sport: "Basketball",
-        },
-        {
-          username: "avani.gil",
-          password: "12345",
-          name: "Avani",
-          last_name: "Gil",
-          sport: "Field Hockey",
-        },
-        {
-          username: "jeremiah.jenkins",
-          password: "12345",
-          name: "Jeremiah",
-          last_name: "Jenkins",
-          sport: "Baseball",
-        },
-      ];
-    </script>
-    <script id="simple-fetch-demo">
-      // 8.	Now let's switch to external JSON. Upload your JSON file to a folder on your server
-      //		and upload this HTML file to the same folder.
-      // 9.	To load your JSON in an external file, we'll overwrite the local JSON above.
-      // 		First add a word to the following line that says this function will operate asynchronously.
-      buildCardsFromData = async() => {
-      	// 10.	Put the word "await" before any command that requires waiting for data to load.
-      	// 11.	Fetch the JSON file name you used above (must be in the same folder).
-      	let response = await fetch("sample.json") ;
-      	// 12.	Add a method that converts the response to JSON. Make this call asynchronous too.
-      	let cardsJSON = await response.json() ;
-      	// From here down, everything is client-side, so we don't need the "await" keyword anymore.
-      	// We'll make cards from each item in our cardsJSON array.
-      	// Below is a quick-and-dirty way to make divs from your JSON,
-      	// just by loading HTML tags into a big string variable.
-      	// 3.	Fill in the iterator that creates one array from another.
-      	cardsHTML = cardsJSON.map(
-      		card => {
-      			// 4	Add the punctuation marks that enclose a string template.
-      			// 5.	Also fill in four of the labels (keys) from your sample JSON records.
-      			// 		(You may not use all of your keys.)
-      			return (
-      				`<div class="card">
-      					<h4>${card["username"]}</h4>
-      					<h5>${card["name"]}</h5>
-      					<p>${card["sport"]}</p>
-      				</div>`
-      			)
-      		} 
-      	) ;
-      	// 6.	Log the result in the console to make sure our JSON is converting to HTML correctly.
-      	// 		You'll see weird line breaks because of the way we formatted our text above.
-      	console.log(  `cardsHTML is ${cardsHTML}` ) ;
-      	// Now we will just add each of these cards to our container.
-      	// 7. Fill in the method that adds HTML content inside a tag.
-      	cardsHTML.forEach(
-      		card => {
-      			document.getElementById("device").innerHTML += card ;
-      		}
-      	) ;
-      } ;
-      // Note that we are not checking for errors in the server connection.
-      // To do that, we could add this to the call in our link below.
-      // buildCardsFromData().catch( error => console.log(error) ) ;
-    </script>
-  </head>
-  <body>
-    <h1>Basic Fetch Demo</h1>
-    <!-- 2. Add an event listener that calls our function above when clicked. -->
-    <p>
-      <a href="#" onclick="buildCardsFromData(); return false;">Build cards</a>
-    </p>
-    <p id="device"></p>
-  </body>
-</html>
+[
+    {
+    team: 'NJIT',
+    date: 'Feb 24, 2024',
+    image:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/3/30/NJIT_Highlanders_logo.svg/800px-NJIT_Highlanders_logo.svg.png',
+    link: ' ',
+  },
+  {
+    team: 'UMBC',
+    date: 'Feb 22, 2024',
+    image:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/UMBC_Retrievers_logo.svg/800px-UMBC_Retrievers_logo.svg.png',
+    link: ' ',
+  },
+  {
+    team: 'Vermont',
+    date: 'Feb 17, 2024',
+    image:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/3/34/Vermont_Catamounts_logo.svg/800px-Vermont_Catamounts_logo.svg.png',
+    link: 'https://docs.google.com/document/d/1FNrXeRGwY-j0etoYrkVV1GGLeTRZfUIo/edit',
+  },
+  {
+    team: 'Bryant',
+    date: 'Feb 3, 2024',
+    image:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Bryant_Bulldogs_logo.svg/1200px-Bryant_Bulldogs_logo.svg.png',
+    link: 'https://docs.google.com/document/d/1NkDCgsVNjGdZeWsq9fvGJM6dCf2m4YW3/edit',
+  },
+  {
+    team: 'Binghamton',
+    date: 'Jan 27, 2024',
+    image:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Binghamton_Bearcats_logo.svg/800px-Binghamton_Bearcats_logo.svg.png',
+    link: 'https://docs.google.com/document/d/1tHhRCYhx8gfRzmT6xQP_0KnvBqtc_Oa_/edit',
+  },
+  {
+    team: 'Albany',
+    date: 'Jan 25, 2024',
+    image:
+      'https://www.albany.edu/sites/default/files/Primary_Split_A_2020_RGB_0.png',
+    link: 'https://docs.google.com/document/d/1tHhRCYhx8gfRzmT6xQP_0KnvBqtc_Oa_/edit',
+  },
+  {
+    team: 'UNH',
+    date: 'Jan 11, 2024',
+    image:
+      'https://1000logos.net/wp-content/uploads/2021/07/New-Hampshire-Wildcats-logo.png',
+    link: 'https://docs.google.com/document/d/1hxmpJRTgSmo6M7MNMaXaxXSNfPMIxK2Z/edit',
+  },
+  {
+    team: 'UMass Lowell',
+    date: 'Jan 4, 2024',
+    image:
+      'https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/uml.sidearmsports.com/images/2021/8/20/PrimaryLogo.png',
+    link: 'https://docs.google.com/document/d/1qN9PIUnc2YGcIOHsgvZN7S-jJxHi0esO/edit',
+  },
+];
